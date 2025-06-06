@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-#Lower Triangle
+//Lower Triangle
 int main() {
     for(int i = 0; i < 5; i++) {
         for(int j = 0; j <= i; j++) {
@@ -13,7 +13,7 @@ int main() {
 }
 
 
-# Upper Triangle
+// Upper Triangle
 int main() {
     int rows = 5;
 
@@ -31,7 +31,7 @@ int main() {
 }
 
 
-#Pyramid Pattern containing '*' 
+ // Pyramid Pattern containing '*' 
 int main() {
     int n = 5;
 
