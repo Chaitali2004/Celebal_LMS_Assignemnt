@@ -22,26 +22,7 @@ print("number of passanger in original data: " + str(len(titanic_data.index)))
 
 titanic_data.info()
 
-"""## Analyze Data"""
-
-sns.countplot(x = "Survived" , data = titanic_data)
-#titanic_data["Survived"].plot.hist()
-
-#check how many female and male in surviver
-sns.countplot( x = "Survived" , hue = "Sex", data = titanic_data)
-
-sns.countplot(x = "Survived", hue = "Pclass" , data = titanic_data)
-
-sns.countplot(x = "Survived" , hue = "Age" , data = titanic_data)
-
-titanic_data["Age"].plot.hist()
-
-titanic_data['Fare'].plot.hist(bins = 20 , figsize = (,5) )
-#bins signify number of intervals into which data range will be divided and igsize is a tuple specifying the width and height of the figure (in inches) that will contain the histogram plot
-
-sns.countplot(x = "SibSp" , data = titanic_data)
-
-"""## data wrangling  - data is removing null values in dataset"""
+"""## data wrangling  - data is removing null values in dataset--------------------------------------------------------------------------------------------------------"""
 
 titanic_data.isnull()
 
@@ -80,10 +61,27 @@ titanic_data.drop(["Sex", "Embarked", "PassengerId", "Name", "Ticket"], axis = 1
 
 titanic_data.drop("Pclass", axis =1, inplace = True)
 
-"""## Implelement Logistic Regression
-by Train and Test Data - Build the model on the train
-data and predict the output on
-the test data
+"""## Analyze Data------------------------------------------------------------------------------------------------------------------------------------------"""
+
+sns.countplot(x = "Survived" , data = titanic_data)
+#titanic_data["Survived"].plot.hist()
+
+#check how many female and male in surviver
+sns.countplot( x = "Survived" , hue = "Sex", data = titanic_data)
+
+sns.countplot(x = "Survived", hue = "Pclass" , data = titanic_data)
+
+sns.countplot(x = "Survived" , hue = "Age" , data = titanic_data)
+
+titanic_data["Age"].plot.hist()
+
+titanic_data['Fare'].plot.hist(bins = 20 , figsize = (,5) )
+#bins signify number of intervals into which data range will be divided and igsize is a tuple specifying the width and height of the figure (in inches) that will contain the histogram plot
+
+sns.countplot(x = "SibSp" , data = titanic_data)
+
+"""## Implelement Logistic Regression ----------------------------------------------------------------------------------------------------------------------
+by Train and Test Data - Build the model to train data and predict the output on the test data
 logistic Logistic Regression()
 logistic.fit(train_X,train_Y)
 """
@@ -127,7 +125,7 @@ from sklearn.metrics import accuracy_score
 accuracy = accuracy_score(y_test, predictions)
 print("Accuracy:", accuracy)
 
-"""Comparsion between different model like Random Forest, SVM, KNN"""
+"""Comparsion between different model like Random Forest, SVM, KNN ----------------------------------------------------------------------------------------------------"""
 
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
